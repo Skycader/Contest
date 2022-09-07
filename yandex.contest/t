@@ -1,0 +1,171 @@
+// С бекенда приходит массив такого вида:
+var arr = [
+  { name: 'width', value: 10 }, 
+  { name: 'height', value: 20 },
+  // ...
+  { name: 'price', value: 3}
+];
+
+// Нужно получить объект такого вида:
+/*
+{
+  width: 10,
+  height: 20,
+  price: 3
+  ...
+}
+*/
+
+function objFromArr(arr) {
+  const result = {};
+
+   for (let i = 0; i<arr.length; i++) {
+        result[arr[i].name] = arr[i].value
+    }
+
+  return result;
+}
+
+
+/// Дается следущий массив данных
+
+var hubs = [
+  {
+    host: 'hub01',
+    browserName: 'firefox',
+    active: 3,
+    total: 10
+  },
+  {
+    host: 'hub02',
+    browserName: 'chrome',
+    active: 2,
+    total: 5
+  },
+  {
+    host: 'hub03',
+    browserName: 'firefox',
+    active: 0,
+    total: 10
+  }
+]
+
+//Нужно посчитать общее число каждого вида браузеров и активное в данный момент.
+//Результат для конкретного примера:
+/*
+{
+  firefox: {
+    active: 3,
+    total: 20
+  },
+  chrome: {
+    active: 2,
+    total: 5
+   }
+}
+*/
+
+function solution(arr) {
+    let keys = {}
+
+    for (let item of arr) {
+        if (!keys[item.browserName]) {
+            keys[item.browserName] = { active: 0, total: 0};
+        }
+        keys[item.browserName].active += item.active
+        keys[item.browserName].total += item.total
+    }
+
+    return keys
+
+}
+
+////
+/**
+ * Необходимо написать функцию, которая тестирует входную строку на наличие правильной вложенности для скобок
+ * трёх видов "()", "[]", "<>".
+ */
+
+testBrackets('[a] (b) <>'); // => true
+testBrackets('[a] (b<)>'); // => false
+testBrackets('<[(<a>)]>'); // => true
+testBrackets('hello[ [w]orld(!)] <y[ande]x>!'); // => true
+testBrackets('[>]'); // => false
+testBrackets('hello () world ]'); // => false
+testBrackets('empty'); // => true
+
+testBrackets('[ xxx ( yyy )'); // => false
+
+function testBrackets(str) {
+    // your code here
+    let stack = [] //stack
+
+    for (let sym of str) {
+        let last = '';
+        switch (sym) {
+            case '(':
+                stack.push(sym)
+                break
+            case ')':
+                 last = stack.pop()
+                 if (last !=='(') return false
+                 break
+            case '[':
+                stack.push(sym)
+                break
+            case ']':
+                 last = stack.pop()
+                 if (last !=='[') return false
+                 break
+            case '<':
+                stack.push(sym)
+                break
+            case '>':
+                 last = stack.pop()
+                 if (last !=='<') return false
+                 break
+        }
+    }
+    if (stack.length!==0) return false
+    return true
+}
+    
+ ////
+ /*
+Даны 3 асинхронные функции со случайным setTimeout
+Нужно написать код, который выведет в консоль:
+A
+B
+C
+*/
+
+function foo(callback) {
+    setTimeout(function() {
+        callback('A');
+    }, Math.random()*100);
+}
+
+function bar(callback) {
+    setTimeout(function() {
+        callback('B');
+    }, Math.random()*100);
+}
+
+function baz(callback) {
+    setTimeout(function() {
+        callback('C');
+    }, Math.random()*100);
+}
+
+new Promise(foo)
+    .then((result)=>{
+        console.log(result)
+        new Promise(bar)
+            .then(result=>{
+                console.log(result)
+                new Promise(baz)
+                    .then(result=>{ console.log(result) })
+            }) 
+    })
+
+
