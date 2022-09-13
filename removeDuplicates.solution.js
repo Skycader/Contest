@@ -14,3 +14,4 @@ var removeDuplicates = function(str) {
 const f = (str,stack) => Array.from(str).reduce((stack,sym)=>(stack[stack.length-1] != sym) ? stack+=sym : stack.slice(0,-1),"")
 const f = (str,stack) => Array.from(str).reduce((stack,sym)=>(stack[stack.length-1]==sym) ? stack.slice(0,-1) : stack+=sym,'')
 console.log(f('abbac')) //===> aac ===> c
+const f = (str,stack) => Array.from(str).reduce((stack,sym)=>(sym == stack[stack.length-1]) ? stack.slice(0,-1) : stack+=sym,'')

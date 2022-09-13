@@ -1,4 +1,4 @@
-const flow = (...funs) => {
+const flow2 = (...funs) => {
 	return function(arg) {
 		let res = 0
 		for (let item of funs) {
@@ -8,6 +8,8 @@ const flow = (...funs) => {
 		//return funs.reduce((total,fun)=>{console.log(fun(arg)); return total+=fun(arg)},0)
 	}
 }
+
+const flow = (...funs) => (arg) => funs.reduce((total,fun)=>total+=fun(arg),0)
 
 const add = x => y => y+x
 const multiple = x => y => y*x

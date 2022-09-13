@@ -34,6 +34,5 @@ var hubs = [
 }
 */
 
-
 module.exports=f
 // console.log(f(hubs))

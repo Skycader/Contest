@@ -16,7 +16,6 @@ function baz(callback) {
     },1000)
 }
 
-
 f(foo,bar,baz).then(res=>{
 	if (JSON.stringify(res)===JSON.stringify(['A','B','C'])) {
 		console.log('Test passed')
