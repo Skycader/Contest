@@ -9,4 +9,4 @@ const o = flow(
 console.log(o)
 */
 
-module.exports = flow
+module.exports = f

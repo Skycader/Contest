@@ -1,4 +1,6 @@
-//const negatives in matrix
+//count negatives in matrix
+
+
 
 module.exports = f 
 

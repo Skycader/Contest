@@ -1,0 +1,5 @@
+Promise.resolve('foo')
+	.then(undefined)
+	.then()
+	.then()
+	.then(res=>console.log(res))

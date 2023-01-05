@@ -19,6 +19,15 @@ function baz(callback) {
     },1000)
 }
 
+describe('Testing ... ', () => {
+	test('Test 1', async () => {
+	let res = await f(foo,bar,baz)
+	expect(res).toEqual(['A','B','C'])
+	})
+})
+
+
+/*
 describe('Basic Test', () => {
   let response = 0
   f(foo,bar,baz).then(res=>{response=res})
@@ -28,3 +37,4 @@ describe('Basic Test', () => {
   });
   },3500)
 });
+*/

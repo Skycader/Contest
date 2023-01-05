@@ -16,12 +16,6 @@ function baz(callback) {
     },1000)
 }
 
-f(foo,bar,baz).then(res=>{
-	if (JSON.stringify(res)===JSON.stringify(['A','B','C'])) {
-		console.log('Test passed')
-	} else {
-		throw new Error('Test failed')
-	}
-})
+//Expect f(foo,bar,baz).then(res=>res) res to be ['A','B','C']
 
 module.exports = f

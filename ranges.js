@@ -9,7 +9,12 @@ Explanation: The ranges are:
 */
 
 
+//10 lines maximum
+
+const summaryRanges = f
+module.exports = f
 
 //const arr = [0,1,2,4,5,7]
 const arr = [0,2,3,4,6,8,9]
+//0; 2->4; 6; 8->9
 console.log(summaryRanges(arr))

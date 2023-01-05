@@ -8,6 +8,15 @@ let arr = [
 //width: 20
 //height: 20
 
+const f = arr => {
+	let obj = {}
+
+	for (let item of arr) {
+		obj[item.name]=item.value
+	}
+	return obj
+}
+
 const f = (arr) => {
 	const obj = {}
 	for (let i of arr) {
