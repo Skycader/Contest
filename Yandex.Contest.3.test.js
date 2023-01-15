@@ -1,17 +1,17 @@
-f= require('./Yandex.Contest.3.js')
-const { assert } = require('chai');
+const testBrackets = require('./Yandex.Contest.3.js')
 
 describe("Tests", () => {
   it("test", () => {
-    assert.strictEqual(testBrackets("[a] (b) <>"), true)
-    assert.strictEqual(testBrackets("[a] (b<)>"), false)
-    assert.strictEqual(testBrackets(""), true)
-    assert.strictEqual(testBrackets("<[(<a>)]>"), true)
-    assert.strictEqual(testBrackets("hello[ [w]orld(!)] <y[ande]x>!"), true)
-    assert.strictEqual(testBrackets("[>]"), false)
-    assert.strictEqual(testBrackets("hello () world ]"), false)
-    assert.strictEqual(testBrackets("empty"), true)
-    assert.strictEqual(testBrackets("[ xxx ( yyy )"), false)
+
+    expect(testBrackets("[a] (b) <>")).toBe(true)
+    expect(testBrackets("[a] (b<)>")).toBe(false)
+    expect(testBrackets("")).toBe(true)
+    expect(testBrackets("<[(<a>)]>")).toBe(true)
+    expect(testBrackets("hello[ [w]orld(!)] <y[ande]x>!")).toBe(true)
+    expect(testBrackets("[>]")).toBe(false)
+    expect(testBrackets("hello () world ]")).toBe(false)
+    expect(testBrackets("empty")).toBe(true)
+    expect(testBrackets("[ xxx ( yyy )")).toBe(false)
      
   });
   

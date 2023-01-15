@@ -9,5 +9,4 @@ Input: s = "azxxzy"
 Output: "ay"
 */
 
-
 module.exports = f

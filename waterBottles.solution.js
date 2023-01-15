@@ -1,3 +1,7 @@
+/* 14 january 2023 15:26 (9 days, 16 hours before) */
+
+const f = (full, ex, em=0, dr=0) => (full>0 ? f(0,ex,em+full, dr+full) : (em>=ex ? f(full+em/ex|0,ex,em%ex, dr) : dr))
+
 
 /* 04 january 2023 23:00 */
 const f = (full,exchange,empty=0,drank=0) => { console.log(full,exchange,empty,drank); return (full>0 ? f(0,exchange,empty+full,drank+full) : (empty >= exchange ? f(full+empty/exchange|0,exchange,empty%exchange,drank) : drank))}

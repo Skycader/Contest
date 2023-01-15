@@ -9,3 +9,5 @@ Promise.resolve()
 	.then(setTimeout(() => console.log(4), 0))
 
 console.log(5)
+
+

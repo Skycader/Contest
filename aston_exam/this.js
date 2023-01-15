@@ -16,4 +16,4 @@ var obj2 = {
 foo(); //
 obj1.foo() //
 foo.call(obj2) //
-new foo()
+new foo() //
