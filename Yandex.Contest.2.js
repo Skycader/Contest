@@ -19,6 +19,15 @@ var hubs = [
   },
 ];
 
+const f = hubs => {
+	let res = {}
+	for (let hub of hubs) {
+		res[hub.browserName] = res[hub.browserName] || {active: 0, total: 0}
+		res[hub.browserName].active += hub.active
+		res[hub.browserName].total += hub.total
+	}
+	return res
+}
 
 //Нужно посчитать общее число каждого вида браузеров и активное в данный момент.
 //Результат для конкретного примера:

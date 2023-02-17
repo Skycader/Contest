@@ -11,6 +11,8 @@ Explanation: The ranges are:
 
 //10 lines maximum
 
+
+
 const summaryRanges = f
 module.exports = f
 

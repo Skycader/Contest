@@ -33,6 +33,18 @@ var hubs = [
      }
   }
   */
+
+ /* 22.01.2023 18:31 */
+const f = hubs => {
+	let res = {}
+	for (let hub of hubs) {
+		res[hub.browserName] = res[hub.browserName] || {active: 0, total: 0}
+		res[hub.browserName].active += hub.active
+		res[hub.browserName].total += hub.total
+	}
+	return res
+}
+
   
   const sol = (arr) => {
     let res = {};

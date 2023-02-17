@@ -33,3 +33,5 @@ Promise.all([
    new Promise(baz),
 
 ]).then(res=>console.log(res))
+
+

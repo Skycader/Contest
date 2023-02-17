@@ -1,22 +1,21 @@
 f=require('./Yandex.Contest.4.js')
-const { assert } = require('chai');
 
 function foo(callback) {
     setTimeout(function(){
         callback('A')
-    },3000)
+    },300)
 }
 
 function bar(callback) {
     setTimeout(function(){
         callback('B')
-    },2000)
+    },200)
 }
 
 function baz(callback) {
     setTimeout(function(){
         callback('C')
-    },1000)
+    },100)
 }
 
 describe('Testing ... ', () => {

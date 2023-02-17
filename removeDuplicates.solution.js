@@ -1,3 +1,12 @@
+/* 17 feb 2023 22:37 */
+
+const f = str => Array.from(str).
+	reduce((stack,sym)=>(
+		stack.at(-1) === sym 
+		? stack = stack.slice(0,-1)
+		: stack+=sym
+	),'')
+
 /* 29 december 2022  11:43 */
 const f = str => Array.from(str).reduce((stack, sym) => (stack[stack.length-1] === sym ? stack=stack.slice(0,-1) : stack+=sym),'')
 
