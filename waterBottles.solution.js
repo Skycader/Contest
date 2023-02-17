@@ -1,3 +1,13 @@
+/* 17 feb 2023 22:47 */
+
+
+const f = (fu,ex,em=0,co=0) => 
+	(fu > 0 ? f(0,ex,em+fu,co+fu) 
+		: (em>=ex 
+			? f(em/ex|0,ex,em%ex,co)
+			: co)
+	)
+
 /* 14 january 2023 15:26 (9 days, 16 hours before) */
 
 const f = (full, ex, em=0, dr=0) => (full>0 ? f(0,ex,em+full, dr+full) : (em>=ex ? f(full+em/ex|0,ex,em%ex, dr) : dr))
