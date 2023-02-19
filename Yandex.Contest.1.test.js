@@ -1,5 +1,4 @@
 f=require('./Yandex.Contest.1.js')
-const { assert } = require('chai');
 
 let arr = [
 	{name: 'width', value: 20},
@@ -15,6 +14,6 @@ let obj = {
 
 describe("Tests", () => {
   it("test", () => {
-    assert.strictEqual(JSON.stringify(f(arr)), JSON.stringify(obj))
+	expect(f(arr)).toEqual(obj)
   });
 });
