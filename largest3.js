@@ -25,4 +25,6 @@ Output: ""
 Explanation: No substring of length 3 consists of only one unique digit. Therefore, there are no good integers.
 */
 
+
+
 module.exports = f
