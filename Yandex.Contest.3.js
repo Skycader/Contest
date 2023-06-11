@@ -2,8 +2,5 @@
 
 //Решение:
 
-
-
-
 testBrackets = f;
 module.exports = f;
