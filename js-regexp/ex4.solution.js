@@ -2,8 +2,8 @@
   * lel. lol lil. => l*l. lol l*l.
 */
 
-const r = //
+const r = /l.l\./g
 const f = (text) => {
-  return;
+  return text.replace(r, 'l*l.')
 }
 module.exports = f
