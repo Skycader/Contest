@@ -1,5 +1,27 @@
 //Определить правильную последовательность скобок из ()[]<>, желательно масштабируемое решение
 
+/* 14 june 2023 */
+const f = (str) => {
+  const brs = "()[]<>"
+  const stack = []
+  for (let sym of str) {
+    switch (brs.indexOf(sym) % 2) {
+      case 0:
+        stack.push(sym)
+        break
+      case 1:
+        const [open, close] = [brs.indexOf(stack.pop()), brs.indexOf(sym) - 1]
+        if (open !== close) return false
+        break
+    }
+  }
+
+  if (stack.length) return false;
+  return true
+}
+
+
+
 /* 18.02.2023 17:43 */
 
 const f = str => {
