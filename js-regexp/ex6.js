@@ -1,5 +1,5 @@
 /*
- * remove digits 0-5 and capitals fro ma string
+ * remove digits 0-5 and capitals from a string
 */
 
 const r = //
