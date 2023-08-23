@@ -14,7 +14,7 @@ describe('Regexp', () => {
   });
 
   it('Test case for ex8 #3', () => {
-    expect(f(`I love you xoxoxoxo`)).toBe(
+    expect(f(`I love you xo`)).toBe(
       false,
     );
   });
