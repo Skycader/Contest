@@ -1,5 +1,5 @@
 /*
- * Remove all Mr. and Mrs from text.
+ * Remove all Mr. and Mrs. from text.
  */
 
 const r = //;
