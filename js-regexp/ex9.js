@@ -1,9 +1,9 @@
 /*
  * Count how many lines start with The
-*/
+ */
 
-const r = //
+const r = //;
 const f = (text) => {
   return;
-}
-module.exports = f
+};
+module.exports = f;
