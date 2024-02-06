@@ -7,16 +7,27 @@ Explanation: The ranges are:
 [4,5] --> "4->5"
 [7,7] --> "7"
 */
+const f = (arr) =>
+  arr
+    .map(
+      (() => {
+        const result = [];
+        arr.push(null);
+        let prev = null;
 
+        return (num) => {
+          num !== null
+            ? prev !== null
+              ? prev + 1 !== num
+                ? result.push([num])
+                : (result[result.length - 1][1] = num)
+              : result.push([num])
+            : null;
+          prev = num;
+          if (num === null) return result;
+        };
+      })(),
+    )
+    .filter(Boolean);
 
-//10 lines maximum
-
-
-
-const summaryRanges = f
-module.exports = f
-
-//const arr = [0,1,2,4,5,7]
-const arr = [0,2,3,4,6,8,9]
-//0; 2->4; 6; 8->9
-console.log(summaryRanges(arr))
+console.log(f([1, 2, 3, 5, 9])); //[ [1,3],[5],[9] ]
