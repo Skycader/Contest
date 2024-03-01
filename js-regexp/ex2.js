@@ -2,8 +2,8 @@
  * Remove all Mr. and Mrs. from text.
  */
 
-const r = //;
+const r = /(Mr.)|(Mrs.)/gi;
 const f = (text) => {
-  return;
+  return text.replace(r, "");
 };
 module.exports = f;

@@ -34,12 +34,26 @@ var hubs = [
 }
 */
 
+/* 1 march 2024 10:08
+ * by Corialanus Snow */
+const f = (hubs) => {
+  const result = {};
+
+  for (let hub of hubs) {
+    if (!result[hub.browserName])
+      result[hub.browserName] = { active: 0, total: 0 };
+    result[hub.browserName].active += hub.active;
+    result[hub.browserName].total += hub.total;
+  }
+
+  return result;
+};
+
 /* 24.05.2023 02:37 */
 const f = (hubs) => {
   let obj = {};
   for (let item of hubs) {
-    if (!obj[item.browserName])
-      obj[item.browserName] = { active: 0, total: 0 };
+    if (!obj[item.browserName]) obj[item.browserName] = { active: 0, total: 0 };
     obj[item.browserName].active += item.active;
     obj[item.browserName].total += item.total;
   }
@@ -48,16 +62,15 @@ const f = (hubs) => {
 };
 
 /* 22.01.2023 18:31 */
-const f = hubs => {
-  let res = {}
+const f = (hubs) => {
+  let res = {};
   for (let hub of hubs) {
-    res[hub.browserName] = res[hub.browserName] || { active: 0, total: 0 }
-    res[hub.browserName].active += hub.active
-    res[hub.browserName].total += hub.total
+    res[hub.browserName] = res[hub.browserName] || { active: 0, total: 0 };
+    res[hub.browserName].active += hub.active;
+    res[hub.browserName].total += hub.total;
   }
-  return res
-}
-
+  return res;
+};
 
 const sol = (arr) => {
   let res = {};
@@ -77,29 +90,27 @@ const sol = (arr) => {
 console.log(sol(hubs));
 
 const s = (arr) => {
-  const obj = {}
+  const obj = {};
   for (let item of arr) {
-    if (!obj[item.browserName]) obj[item.browserName] = {}
-    if (!obj[item.browserName].total) obj[item.browserName].total = 0
-    if (!obj[item.browserName].active) obj[item.browserName].active = 0
-    obj[item.browserName].total += item.total
-    obj[item.browserName].active += item.active
+    if (!obj[item.browserName]) obj[item.browserName] = {};
+    if (!obj[item.browserName].total) obj[item.browserName].total = 0;
+    if (!obj[item.browserName].active) obj[item.browserName].active = 0;
+    obj[item.browserName].total += item.total;
+    obj[item.browserName].active += item.active;
   }
-  return obj
-}
+  return obj;
+};
 
 const f2 = (arr) => {
-  const obj = {}
+  const obj = {};
   for (let item of arr) {
-    if (!obj[item.browserName]) obj[item.browserName] = {}
-    if (!obj[item.browserName].total) obj[item.browserName].total = 0
-    if (!obj[item.browserName].active) obj[item.browserName].active = 0
-    obj[item.browserName].total += item.total
-    obj[item.browserName].active += item.active
+    if (!obj[item.browserName]) obj[item.browserName] = {};
+    if (!obj[item.browserName].total) obj[item.browserName].total = 0;
+    if (!obj[item.browserName].active) obj[item.browserName].active = 0;
+    obj[item.browserName].total += item.total;
+    obj[item.browserName].active += item.active;
   }
-  return obj
-}
+  return obj;
+};
 
-console.log(s(hubs))
-
-
+console.log(s(hubs));
