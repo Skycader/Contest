@@ -11,6 +11,4 @@ Input: s = "azxxzy"
 Output: "ay"
 */
 
-
-
-module.exports = f
+module.exports = f;
