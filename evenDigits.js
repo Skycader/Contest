@@ -2,4 +2,10 @@
 //Input: nums = [12,345,2,6,7896]
 //Output: 2
 
-module.exports = f
+const f = (nums) =>
+  nums.reduce(
+    (count, num) => (num.toString().length % 2 === 0 ? (count += 1) : count),
+    0,
+  );
+
+module.exports = f;
