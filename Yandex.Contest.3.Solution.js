@@ -1,137 +1,152 @@
 //Определить правильную последовательность скобок из ()[]<>, желательно масштабируемое решение
 
+/* 31 March 2024 21:46 */
+const f = (str) => {
+  const syms = "()[]<>";
+  const stack = [];
+  for (let sym of str) {
+    switch (syms.indexOf(sym) % 2) {
+      case 0:
+        stack.push(sym);
+        break;
+      case 1:
+        let open = stack.pop();
+        if (syms.indexOf(open) !== syms.indexOf(sym) - 1) return false;
+        break;
+    }
+  }
+
+  return stack.length === 0;
+};
+
 /* 15 sept 2023 14:11 NIIAS */
 
-const f = str => {
-  const stack = []
-  const brs = "()<>[]"
+const f = (str) => {
+  const stack = [];
+  const brs = "()<>[]";
 
   for (let sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] =
-          [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)]
+        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)];
         if (open !== close) return false;
     }
   }
   if (stack.length) return false;
-  return true
-}
+  return true;
+};
 
 /* 14 june 2023 */
 const f = (str) => {
-  const brs = "()[]<>"
-  const stack = []
+  const brs = "()[]<>";
+  const stack = [];
   for (let sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brs.indexOf(stack.pop()), brs.indexOf(sym) - 1]
-        if (open !== close) return false
-        break
+        const [open, close] = [brs.indexOf(stack.pop()), brs.indexOf(sym) - 1];
+        if (open !== close) return false;
+        break;
     }
   }
 
   if (stack.length) return false;
-  return true
-}
-
-
+  return true;
+};
 
 /* 18.02.2023 17:43 */
 
-const f = str => {
-  const brs = "()[]<>"
-  const stack = []
+const f = (str) => {
+  const brs = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)]
-        if (open !== close) return false
-        break
+        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)];
+        if (open !== close) return false;
+        break;
     }
   }
 
-  if (stack.length) return false
-  return true
-}
-
+  if (stack.length) return false;
+  return true;
+};
 
 /* 21.01.2023 12:09 */
 
-const f = str => {
-  const brs = "()[]<>"
-  const stack = []
+const f = (str) => {
+  const brs = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)]
-        if (open !== close) return false
-        break
+        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)];
+        if (open !== close) return false;
+        break;
     }
   }
 
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 //
 
-const f = str => {
-  const bra = "[]()<>"
-  const stack = []
+const f = (str) => {
+  const bra = "[]()<>";
+  const stack = [];
 
-  const defineType = b => bra.indexOf(b) % 2
+  const defineType = (b) => bra.indexOf(b) % 2;
 
   for (let sym of str) {
-    console.log(defineType(sym))
+    console.log(defineType(sym));
     switch (defineType(sym)) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let open = stack.pop()
-        if (bra.indexOf(open) + 1 !== bra.indexOf(sym)) return false
-        break
+        let open = stack.pop();
+        if (bra.indexOf(open) + 1 !== bra.indexOf(sym)) return false;
+        break;
     }
   }
 
-  if (stack.length) return false
+  if (stack.length) return false;
 
-  return true
-}
+  return true;
+};
 
-const f = str => {
-  const brs = "()[]<>"
-  const stack = []
+const f = (str) => {
+  const brs = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)]
-        if (open != close) return false
-        break
+        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)];
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f2 = (str) => {
   let stack = [];
@@ -155,144 +170,146 @@ const f2 = (str) => {
   return false;
 };
 
-const f = str => {
-  const brs = "()[]<>"
-  const stack = []
+const f = (str) => {
+  const brs = "()[]<>";
+  const stack = [];
 
   for (const sym of str) {
     switch (brs.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)]
-        if (open != close) return false
-        break
+        const [open, close] = [brs.indexOf(stack.pop()) + 1, brs.indexOf(sym)];
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f = (str) => {
-  const brackets = "()[]<>"
-  const stack = []
+  const brackets = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brackets.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let got = stack.pop()
-        let pair = brackets.indexOf(got)
-        if (brackets.indexOf(sym) - 1 != pair) return false
-        break
+        let got = stack.pop();
+        let pair = brackets.indexOf(got);
+        if (brackets.indexOf(sym) - 1 != pair) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f3 = (str) => {
-  const brackets = "()[]<>"
-  const stack = []
+  const brackets = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brackets.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let open = brackets.indexOf(stack.pop())
-        let close = brackets.indexOf(sym) - 1
-        if (open != close) return false
-        break
+        let open = brackets.indexOf(stack.pop());
+        let close = brackets.indexOf(sym) - 1;
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f4 = (str) => {
-  const brackets = "()[]<>"
-  const stack = []
+  const brackets = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brackets.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let open = brackets.indexOf(stack.pop())
-        let close = brackets.indexOf(sym) - 1
-        if (open != close) return false
-        break
+        let open = brackets.indexOf(stack.pop());
+        let close = brackets.indexOf(sym) - 1;
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f5 = (str) => {
-  const brackets = "()[]<>"
-  const stack = []
+  const brackets = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (brackets.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let open = brackets.indexOf(stack.pop())
-        let close = brackets.indexOf(sym) - 1
-        if (open != close) return false
-        break
+        let open = brackets.indexOf(stack.pop());
+        let close = brackets.indexOf(sym) - 1;
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f6 = (str) => {
-  const bra = "()[]<>"
-  const stack = []
+  const bra = "()[]<>";
+  const stack = [];
 
   for (let sym of str) {
     switch (bra.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        let open = bra.indexOf(stack.pop()) + 1
-        let close = bra.indexOf(sym)
-        if (open != close) return false
-        break
+        let open = bra.indexOf(stack.pop()) + 1;
+        let close = bra.indexOf(sym);
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
+  if (stack.length) return false;
+  return true;
+};
 
 const f0 = (str) => {
-  const brackets = "()[]<>"
-  const stack = []
+  const brackets = "()[]<>";
+  const stack = [];
 
   for (const sym of str) {
     switch (brackets.indexOf(sym) % 2) {
       case 0:
-        stack.push(sym)
-        break
+        stack.push(sym);
+        break;
       case 1:
-        const [open, close] = [brackets.indexOf(stack.pop()) + 1, brackets.indexOf(sym)]
-        if (open != close) return false
-        break
+        const [open, close] = [
+          brackets.indexOf(stack.pop()) + 1,
+          brackets.indexOf(sym),
+        ];
+        if (open != close) return false;
+        break;
     }
   }
-  if (stack.length) return false
-  return true
-}
-
+  if (stack.length) return false;
+  return true;
+};
 
 const testBrackets = f;
 
