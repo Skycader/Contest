@@ -4,10 +4,10 @@
  *
  */
 
-const r = //;
+const r = /(^\/\*[\w\n\s\p{P}]*\*\/$|^\/\/.*$)/gm;
 
 const f = (text) => {
-  return;
+  return text.match(r).length;
 };
 
 module.exports = f;
