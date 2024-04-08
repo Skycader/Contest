@@ -10,16 +10,10 @@
  * <htmx>...</htmx>
  */
 
-const r = /^<html>[\w\W]*<\/html>$/g; //<-- should not have m flag;
+const r = /^<html>[\w\n\s\p{P}]*<\/html>$/g; //<-- should not have m flag;
 const f = (text) => {
   console.log(`${text} => ${r.test(text)}`);
   return r.test(text.trim());
 };
-
-const valid1 = `
-<html>
-  Hello, world!
-</html>
-`;
 
 module.exports = f;
