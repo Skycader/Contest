@@ -11,4 +11,9 @@ const f = (text) => {
   return text.replace(r, '<a href="$2">$1</a>');
 };
 
+const r = /(\w+)\s(https?:\/\/\w+\.com[\/\w]+)/g;
+const f = (text) => {
+  return text.replace(r, '<a href="$2">$1</a>');
+};
+
 module.exports = f;
