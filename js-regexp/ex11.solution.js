@@ -11,4 +11,9 @@ r = /\w+:\s\$\d{3,}\.\d+/g;
 const f = (text) => {
   return text.match(r).length;
 };
+
+r = /\d+:\s\$[\d]{3,}\.\d+/g;
+const f = (text) => {
+  return text.match(r)?.length || 0;
+};
 module.exports = f;
