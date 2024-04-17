@@ -1,4 +1,4 @@
-f = require("./ex16.js");
+f = require('./ex16.js');
 
 const code = `
 /*
@@ -25,8 +25,8 @@ async function bootstrap() {
 bootstrap();
 `;
 
-describe("Regexp 16", () => {
-  it("Test case for ex16", () => {
+describe('Regexp 16', () => {
+  it('Test case for ex16', () => {
     expect(f(code)).toBe(4);
   });
 });
