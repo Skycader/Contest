@@ -8,7 +8,6 @@
  * }
  */
 
-const f = (errors) => {
+const f = (errors) => {};
 
-
-  module.exports = f;
+module.exports = f;
