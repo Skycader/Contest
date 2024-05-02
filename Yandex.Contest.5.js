@@ -1,5 +1,5 @@
-const add = x => y => y + x
-const multiple = x => y => y * x
+const add = (x) => (y) => y + x;
+const multiple = (x) => (y) => y * x;
 
 /*
 const o = flow(
@@ -9,4 +9,4 @@ const o = flow(
 console.log(o)
 */
 
-module.exports = f
+module.exports = f;
