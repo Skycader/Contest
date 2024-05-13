@@ -1,18 +1,18 @@
 function foo(callback) {
-  setTimeout(function () {
-    callback('A');
+  setTimeout(function() {
+    callback("A");
   }, 300);
 }
 
 function bar(callback) {
-  setTimeout(function () {
-    callback('B');
+  setTimeout(function() {
+    callback("B");
   }, 200);
 }
 
 function baz(callback) {
-  setTimeout(function () {
-    callback('C');
+  setTimeout(function() {
+    callback("C");
   }, 100);
 }
 
