@@ -4,6 +4,4 @@
  * to BTAG
  */
 
-const f = (text) => {};
-
 module.exports = f;
