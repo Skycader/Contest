@@ -1,13 +1,15 @@
 /**
  * Count SPECIAL* ip addresses in the given text.
  * *SPECIAL IP ADDRESS LOOKS LIKE: 192.168.92.102...55.34.204
+ * THEY ARE PLACED IN A FORM OF LIST:
+ * 192.168.92.102
+ * 255.255.255.255
+ * ...
+ * 1.1.1.1
  * IN SUMMARY, IT CAN BE ANY LENGTH FROM 4 UNITS TO INFINITY.
  * TASK: FIND THEM ALL.
  *  */
 
-const r = //;
-const f = (text) => {
-  return
-};
+const f = (text) => { };
 
 module.exports = f;
