@@ -3,7 +3,7 @@
  */
 
 const f = (password) => {
-  const r = /^[A-Za-z0-9\p_$]+$/g;
+  const r = /^[A-Za-z0-9\p{P}$]+$/gu;
   return r.test(password);
 };
 module.exports = f;
