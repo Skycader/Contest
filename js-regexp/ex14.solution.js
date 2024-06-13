@@ -6,6 +6,12 @@
  * <a href="https://twitter.com/123">instagram</a>
  */
 
+/** 22.05.2024 07:23 */
+const r = /(\w+)*\s(https:.*\.com[\/\w]+)/gi;
+const f = (text) => {
+  return text.replace(r, '<a href="$2">$1</a>');
+};
+
 const r = /(\w+)\s(https?:\/\/[\w\.\/.]+)/g;
 const f = (text) => {
   return text.replace(r, '<a href="$2">$1</a>');
