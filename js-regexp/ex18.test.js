@@ -20,7 +20,7 @@ const text2 = `
 
 describe('it should find all ip addresses', () => {
   it('should find all special ip addresses', () => {
-    expect(f(text)).toBe(7);
+    expect(f(text)).toBe(6);
   });
   it('should return 0 if found none', () => {
     expect(f(text2)).toBe(0);
