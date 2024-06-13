@@ -10,6 +10,6 @@
  * TASK: FIND THEM ALL.
  *  */
 
-const f = (text) => { };
+const f = (text) => {};
 
 module.exports = f;
