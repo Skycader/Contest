@@ -1,8 +1,6 @@
 /**
- * Make sure the password consist of only ASCII symbols
+ * Make sure the password consist of only ASCII symbols,
+ * which is A-Z a-z 0-9 all special symbols including $
  */
 
-const f = (password) => {
-  return Boolean(password.match(r));
-};
 module.exports = f;
