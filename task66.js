@@ -5,9 +5,9 @@
  * {
  * username: ['cannot be empty, minimal length is 3'],
  * password: ['must contain letters']
- * }
+ * } => [username cannot be empty, ...]
  */
 
-const f = (errors) => {};
+const f = (error) => { };
 
 module.exports = f;

@@ -8,6 +8,16 @@
  * }
  */
 
+/* 14 08 2024 */
+const f = (errors) => {
+  const keys = Object.keys(errors);
+  const result = [];
+  keys.forEach((key) =>
+    errors[key].forEach((error) => result.push(`${key} ${error}`)),
+  );
+  return result;
+};
+
 /* 29 04 2024 */
 
 const f = (errors) => {
