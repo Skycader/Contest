@@ -7,8 +7,4 @@
  * Count as many bills are more than $100
  */
 
-r = //;
-const f = (text) => {
-  return
-};
 module.exports = f;
