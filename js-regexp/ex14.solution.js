@@ -6,6 +6,14 @@
  * <a href="https://twitter.com/123">instagram</a>
  */
 
+/* 14 august 2024 11:24, today going for autodrom
+ * btw youtube is restored by me using spoof dpi and byedpi
+ * */
+const f = (text) => {
+  const r = /(https?:\/\/)(\w+)(\.com)((\/\w+)+)/g;
+  return text.replace(r, `<a href="$1$2$3$4">$2</a>`);
+};
+
 /* 05 august 2024 01:35
  * Comment: youtube is being slowed... damn fuck */
 const f = (text) => {

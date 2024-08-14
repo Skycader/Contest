@@ -6,8 +6,4 @@
  * <a href="https://twitter.com/123">instagram</a>
  */
 
-const f = (text) => {
-  const r = //;
-}
-
 module.exports = f;
