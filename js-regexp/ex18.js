@@ -7,7 +7,7 @@
  * ...
  * 1.1.1.1
  * IN SUMMARY, IT CAN BE ANY LENGTH FROM 4 UNITS TO INFINITY.
- * TASK: FIND THEM ALL.
+ * TASK: COUNT THEM ALL.
  *  */
 
 const f = (text) => {};
