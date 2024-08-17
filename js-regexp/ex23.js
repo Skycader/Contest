@@ -1,5 +1,5 @@
 /*
- * Find all lol words like lel lil lal and change them to l*l but don't change lol itself
+ * Find all words like lel lil lal but not lol itself
  * Export r
  * NOTE: use exclude marker for regexp
  */
