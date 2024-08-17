@@ -10,6 +10,4 @@
  * TASK: COUNT THEM ALL.
  *  */
 
-const f = (text) => {};
-
 module.exports = f;

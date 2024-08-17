@@ -5,6 +5,11 @@
  * TASK: FIND THEM ALL.
  *  */
 
+const f = (text) => {
+  const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+  return text.match(r)?.length || 0;
+};
+
 const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
 const f = (text) => {
   return text.match(r)?.length || 0;
