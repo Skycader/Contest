@@ -2,6 +2,14 @@
  * Make all texts within h1,2,3...6 tags CAPITAL
  */
 
+const f = (text) => {
+  const r = /<(h[1-6])>(.*?)<\/\1>/g;
+  return text.replace(
+    r,
+    (match, m1, m2) => `<${m1}>${m2.toUpperCase()}</${m1}>`,
+  );
+};
+
 /** Solution 31.05.2024 00:02 */
 
 const f = (text) => {
@@ -23,7 +31,7 @@ const f3 = (text) => {
 
 const f2 = (text) => {
   const r = /(<h[1-6]>)(.*?)(<\/h[1-6]>)/gm;
-  return text.replace(r, function (match, $1, $2, $3) {
+  return text.replace(r, function(match, $1, $2, $3) {
     return $1 + $2.toUpperCase() + $3;
   });
 };
