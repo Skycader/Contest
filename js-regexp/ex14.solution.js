@@ -6,6 +6,15 @@
  * <a href="https://twitter.com/123">instagram</a>
  */
 
+/** 02 september 2024
+ * YouTube is working fine and I'm using Memork for italian and japanese, memos is now fully cleared
+ */
+const r = /(https?:\/\/)(.*?)(\.com)((\/\w+)+)/g;
+
+const f = (text) => {
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
 /* 14 august 2024 11:24, today going for autodrom
  * btw youtube is restored by me using spoof dpi and byedpi
  * */
