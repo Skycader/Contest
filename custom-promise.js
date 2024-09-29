@@ -1,15 +1,16 @@
 class Prom {
   result = null;
-
+  resolved = false;
   executeFunc = null;
 
   resolve(data) {
     this.result = data;
+    this.resolved = true;
     if (this.executeFunc) this.executeFunc(data);
   }
 
   then(fun) {
-    if (this.result !== null) return fun(this.result);
+    if (this.resolved) return fun(this.result);
     this.executeFunc = fun;
   }
 
