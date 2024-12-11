@@ -2,7 +2,7 @@
  * Trim &nbsp; (non-break space) in the given text.
  */
 
-const r = /(&nbsp;){2,}/g;
+const r = //;
 const f = (text) => {
   return text.replace(r, "&nbsp;");
 };
