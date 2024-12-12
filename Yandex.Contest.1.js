@@ -1,14 +1,14 @@
 let arr = [
-	{name: 'width', value: 20},
-	{name: 'height', value: 10},
-	{name: 'price', value: 115}
-]
+  { name: "width", value: 20 },
+  { name: "height", value: 10 },
+  { name: "price", value: 115 },
+];
 
 /*
  * let arr = [
-	{name: 'width', value: 20},
-	{name: 'height', value: 10},
-	{name: 'price', value: 115}
+  {name: 'width', value: 20},
+  {name: 'height', value: 10},
+  {name: 'price', value: 115}
 ]
 ===>
 let obj = {
@@ -18,4 +18,4 @@ let obj = {
 }
 */
 
-module.exports=f
+module.exports = f;
