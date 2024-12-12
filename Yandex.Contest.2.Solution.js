@@ -34,6 +34,20 @@ var hubs = [
 }
 */
 
+/* 12 december 2024 17:48
+ * by Areisan Skycader */
+const f = (hubs) => {
+  const res = {};
+
+  for (let hub of hubs) {
+    res[hub.browserName] ?? (res[hub.browserName] = { active: 0, total: 0 });
+    res[hub.browserName].active += hub.active;
+    res[hub.browserName].total += hub.total;
+  }
+
+  return res;
+};
+
 /* 1 march 2024 10:08
  * by Corialanus Snow */
 const f = (hubs) => {
