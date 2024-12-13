@@ -12,6 +12,4 @@
  * [1]
  */
 
-const f = (arr, target) => {};
-
 module.exports = f;
