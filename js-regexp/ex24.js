@@ -6,4 +6,9 @@
  * etc.
  */
 
+/**
+ * Current rang:
+ * ◽️ Recruit (<0 days)
+ */
+
 module.exports = f;
