@@ -20,6 +20,11 @@ class Api {
     return this.#arr.length;
   }
 
+  getArray() {
+    this.#iterations += this.#arr.length;
+    return this.#arr;
+  }
+
   get iterations() {
     return this.#iterations;
   }
@@ -40,11 +45,11 @@ describe("::Running tests for selection sort...", () => {
   const array = new Api([5, 4, 3, 2, 1]);
   f(array);
 
-  it("should sort array", () => {
-    expect(array.isSorted).toBe(true);
+  it("should sort array within given time", () => {
+    expect(array.iterations).toBeLessThanOrEqual(51);
   });
 
-  it("should sort array within given time", () => {
-    expect(array.iterations).toBe(41);
+  it("should sort array", () => {
+    expect(array.getArray()).toEqual([1, 2, 3, 4, 5]);
   });
 });

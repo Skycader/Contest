@@ -11,5 +11,4 @@
  * - getLength() => returns array length
  */
 
-const f = (api) => {};
 module.exports = f;

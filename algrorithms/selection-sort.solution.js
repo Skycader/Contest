@@ -1,13 +1,18 @@
 const f = (api) => {
-  let sorted_count = 0;
-  let min_index = 0;
-  const arrayLength = api.getLength();
-
-  for (let i = sorted_count; i < arrayLength; i++) {
-    for (let j = sorted_count; j < arrayLength; j++) {
-      if (api.get(min_index) > api.get(j)) min_index = j;
+  const length = api.getLength();
+  let sorted = 0;
+  let minIndex = 0;
+  while (sorted < length) {
+    for (let i = sorted; i < length; i++) {
+      if (api.get(i) < api.get(minIndex)) {
+        minIndex = i;
+      }
     }
-    api.set(sorted_count, api.get(min_index));
-    sorted_count++;
+
+    let replace = api.get(sorted);
+    api.set(sorted, api.get(minIndex));
+    api.set(minIndex, replace);
+    sorted++;
+    minIndex = sorted;
   }
 };
