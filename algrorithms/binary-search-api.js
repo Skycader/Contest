@@ -8,6 +8,4 @@
  * with minimal requests.
  */
 
-const binarySearch = (api, target) => { };
-
 module.exports = binarySearch;
