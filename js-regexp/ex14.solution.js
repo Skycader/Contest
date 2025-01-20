@@ -7,6 +7,14 @@
  */
 
 /**
+ * 20 january 2025
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)([\/\w*]*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
  * January 06 2025
  */
 const f = (text) => {
