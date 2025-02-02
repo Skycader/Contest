@@ -17,4 +17,4 @@ random_index=$(($RANDOM % ${#files[@]}))
 random_file=${files[$random_index]}
 
 # Открываем файл (например, в текстовом редакторе nano)
-vim "$random_file"
+nvim "$random_file"
