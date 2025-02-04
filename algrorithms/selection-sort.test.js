@@ -50,6 +50,11 @@ describe("::Running tests for selection sort...", () => {
   });
 
   it("should sort array", () => {
+    console.log(
+      `Результат работы функции: `,
+      array.getArray(),
+      ` ожидается [1,2,3,4,5]`,
+    );
     expect(array.getArray()).toEqual([1, 2, 3, 4, 5]);
   });
 });
