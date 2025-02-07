@@ -7,6 +7,14 @@
  */
 
 /**
+ * A lot of struggle on 7th february 2025
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)([\w]+)(\.[\w]+)((\/[\w]+)*\w*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
  * 20 january 2025
  */
 const f = (text) => {
