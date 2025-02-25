@@ -1,5 +1,36 @@
 const f = (api) => {
   const length = api.getLength();
+
+  let minIndex = 0;
+  let sorted = 0;
+
+  while (sorted < length) {
+    minIndex = sorted;
+    for (let i = sorted; i < length; i++) {
+      if (api.get(i) < api.get(minIndex)) {
+        minIndex = i;
+      }
+    }
+    let wasAtZero = api.get(sorted);
+    // console.log(
+    //   wasAtZero,
+    //   "<->",
+    //   api.get(minIndex),
+    //   api.getArray(),
+    //   " отсортировано элементов: ",
+    //   sorted,
+    // );
+    //
+    api.set(sorted, api.get(minIndex));
+    api.set(minIndex, wasAtZero);
+    sorted++;
+  }
+
+  return 0;
+};
+
+const f = (api) => {
+  const length = api.getLength();
   let sorted = 0;
   let minIndex = 0;
   while (sorted < length) {
