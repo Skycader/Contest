@@ -11,6 +11,28 @@ const f = (api) => {
         minIndex = i;
       }
     }
+    let swap = api.get(sorted);
+    api.set(sorted, api.get(minIndex));
+    api.set(minIndex, swap);
+    sorted++;
+  }
+
+  return 0;
+};
+
+const f = (api) => {
+  const length = api.getLength();
+
+  let minIndex = 0;
+  let sorted = 0;
+
+  while (sorted < length) {
+    minIndex = sorted;
+    for (let i = sorted; i < length; i++) {
+      if (api.get(i) < api.get(minIndex)) {
+        minIndex = i;
+      }
+    }
     let wasAtZero = api.get(sorted);
     // console.log(
     //   wasAtZero,
