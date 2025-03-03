@@ -5,6 +5,14 @@
  * TASK: FIND THEM ALL.
  *  */
 
+/**
+ * 03 march 2025 quick solution
+ */
+const f = (text) => {
+  const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+  return text.match(r)?.length || 0;
+};
+
 /** 23 september 2024 10:26 took me 30 seconds ti write it down */
 const f = (text) => {
   const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
