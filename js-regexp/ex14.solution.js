@@ -7,6 +7,16 @@
  */
 
 /**
+ * Quick and simple loocking solution
+ * 16 march 2025 21:48 MSK
+ */
+
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)([\/\w*]*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
  * A lot of struggle on 7th february 2025
  */
 const f = (text) => {
