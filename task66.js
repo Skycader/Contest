@@ -8,6 +8,4 @@
  * } => [username cannot be empty, ...]
  */
 
-const f = (error) => { };
-
 module.exports = f;

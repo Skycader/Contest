@@ -8,6 +8,16 @@
  * }
  */
 
+/** a bit simpler solution */
+const f = (error) => {
+  let errors = [];
+  let keys = Object.keys(error);
+  for (let key of keys) {
+    errors.push(...error[key].map((error) => key + " " + error));
+  }
+  return errors;
+};
+
 /* 14 08 2024 */
 const f = (errors) => {
   const keys = Object.keys(errors);
