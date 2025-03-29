@@ -1,4 +1,24 @@
 /**
+ * Выглядит более читабельно
+ *
+ */
+const binarySearch = (api, target) => {
+  const length = api.getLength();
+  let start = 0;
+  let end = length - 1;
+  let middle = Math.floor((start + end) / 2);
+
+  while (middle <= end) {
+    let num = api.get(middle);
+    if (target > num) start = middle + 1;
+    if (target < num) end = middle - 1;
+    if (target === num) return middle;
+
+    middle = Math.floor((start + end) / 2);
+  }
+};
+
+/**
  * Эталонная функция
  * 20 jan 2025
  */
