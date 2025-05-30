@@ -6,6 +6,15 @@
  * <a href="https://twitter.com/123">instagram</a>
  */
 
+/** First time attempt yet successful WTF
+ * 31.05.2025
+ *
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com\/)([\w+\/]+)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
 /**
  * Quick and simple loocking solution
  * 16 march 2025 21:48 MSK
