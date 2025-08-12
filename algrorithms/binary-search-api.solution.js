@@ -1,4 +1,28 @@
 /**
+ * Долго решал, но в итоге попал
+ * 12 августа 2025 05:20
+ */
+const binarySearch = (api, value) => {
+  const length = api.getLength();
+  let start = 0;
+  let end = length - 1;
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+    let midValue = api.get(mid);
+    if (value > midValue) {
+      start = mid + 1;
+    }
+    if (value < midValue) {
+      end = mid - 1;
+    }
+    if (value === midValue) return mid;
+  }
+
+  return -1;
+};
+
+/**
  * Выглядит более читабельно
  *
  */
