@@ -1,0 +1,11 @@
+/**
+ * Write regex to test if there is
+ * 1) exactly 3 digits in a given string
+ * 2) less than 3 digits in a given string
+ * 3) 3 or more digits in a given string
+ */
+
+const r1 = /^(?=(?:.*[0-9]){3}).+$/g;
+const r2 = /^(?=(?:.*[0-9]){1,2}).+$/g;
+const r3 = /^(?=(?:.*[0-9]){3,}).+$/g;
+module.exports = [r1, r2, r3];
