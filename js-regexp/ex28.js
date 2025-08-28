@@ -5,7 +5,7 @@
  * - has at least 3 digits
  * - has special character
  * - has no whitespaces
- * - has length from 12 to 24 symbols
+ * - has length from 24 to 256 symbols
  */
 
 module.exports =
