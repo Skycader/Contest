@@ -8,5 +8,4 @@
  * - has length from 24 to 256 symbols
  */
 
-module.exports =
-/^(?<=(?:[A-Z]))(?<=(?:[a-z]))(?<=(?:\d){3,})(?<=(?:[\p{S}\p{P}]))(?<!(?:\s)).*?{24,255}$/;
+module.exports = //

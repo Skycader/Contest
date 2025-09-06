@@ -4,7 +4,7 @@ const f = (text) => r.test(text);
 
 describe("Running test cases for ex25", () => {
   it("...running test case #1", () => {
-    expect(f("$MySuperHardPassword3000")).toBe(true);
+    expect(f("$MySup3erHard0Pass0wor0d")).toBe(true);
   });
 
   it("...running test case #2", () => {
