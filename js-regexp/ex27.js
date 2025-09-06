@@ -5,7 +5,7 @@
  * 3) 3 or more digits in a given string
  */
 
-const r1 = //;
-const r2 = //;
-const r3 = //;
-  module.exports = [r1, r2, r3];
+const r1 = /^(?=(?:\D*\d){3}\D*$)/
+const r2 = /^(?=(?:.*[0-9]){1,2}).+$/g;
+const r3 = /^(?=(?:.*[0-9]){3,}).+$/g;
+module.exports = [r1, r2, r3];

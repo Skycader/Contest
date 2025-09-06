@@ -7,7 +7,8 @@ const f3 = (text) => r3.test(text);
 describe("Running test cases for ex25", () => {
   it("...running test case #1", () => {
     expect(f1("has_1_exact_2_ly_3_digits")).toBe(true);
-    expect(f1("has_1_notexact_2_ly_3_dig_4_its")).toBe(false);
+    expect(f1("1234")).toBe(false);
+    expect(f1("has_1_notex2act_2_ly_3_dig_4_its")).toBe(false);
   });
 
   it("...running test case #2", () => {
