@@ -1,9 +1,7 @@
-const f = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Hello, world!");
-    }, 1000);
-  });
-};
+function promiseHelloWorld() {
+    return new Promise((resolve,reject)=> {
+        resolve('Hello World!')
+    })
+}
 
-f().then((res) => console.log(res));
+promiseHelloWorld().then(res => console.log(res))

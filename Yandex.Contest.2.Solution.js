@@ -34,6 +34,15 @@ var hubs = [
 }
 */
 
+/* 18 september 2025 2:38 */
+const f = hubs => hubs.reduce((acc, hub) => { 
+  !acc.hasOwnProperty(hub.browserName) && (acc[hub.browserName] = {active: 0, total: 0});
+  acc[hub.browserName].active += hub.active;
+  acc[hub.browserName].total += hub.total;
+
+  return acc;
+}, {})
+
 /* 12 december 2024 17:48
  * by Areisan Skycader */
 const f = (hubs) => {
