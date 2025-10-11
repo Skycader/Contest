@@ -6,7 +6,7 @@
  */
 
 
-const r1 = /^(?=(?:\D\d){3}\D*)$/;
-const r2 = /^(?=(?:\D\d){1,2}\D*)$/;
-const r3 = /^(?=(?:\D\d){3,}\D*)$/;
+const r1 = //;
+const r2 = //;
+const r3 = //;
 module.exports = [r1, r2, r3];
