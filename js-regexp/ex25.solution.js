@@ -18,4 +18,14 @@
 const r1 = /(?<=\$)[0-9.]+/g;
 const r2 = /(?<=<title>)(.*)(?=<\/title)/g;
 const r3 = /\b.+(?=:)/g;
+
 module.exports = [r1, r2, r3];
+
+/**
+ * Some other solutions
+ */
+
+//13.10.2025
+const xr1 = /(?<=\$)\d+\.\d+/g;
+const xr2 = /(?<=<title>)(?:.*)(?=<\/title>)/g;
+const xr3 = /(\w+)(?=:\/\/)/g;
