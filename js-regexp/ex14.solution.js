@@ -97,4 +97,9 @@ const f = (text) => {
   return text.replace(r, '<a href="$2">$1</a>');
 };
 
-module.exports = f;
+//03.11.2025 08:08
+//working my virus on
+const f = (text) => {
+  const r = /(https?:\/\/)(\w+)(\.\w+)([/\w+]*)/g;
+  return text.replace(r, `<a href="$1$2$3$4">$2</a>`);
+};
