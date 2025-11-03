@@ -8,4 +8,5 @@
  * - has length from 24 to 256 symbols
  */
 
-module.exports = //;
+module.exports =
+  //;
