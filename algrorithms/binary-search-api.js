@@ -6,6 +6,8 @@
  * Write a function that binary searches
  * a required value in a given array
  * with minimal requests.
+ *
+ * const f = (api, target) => {}
  */
 
-module.exports = binarySearch;
+module.exports = f;
