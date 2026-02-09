@@ -1,5 +1,5 @@
 /**
- *
+ * Ex22
  * Replace all <b> tags
  * to BTAG
  *
@@ -10,6 +10,7 @@ wow <b>world</b>
 BTAG
 BTAG BTAG
 wow BTAG
+Сложность: ★★★★★★☆☆☆☆ (6/10)
  */
 
 const f = (text) => {};

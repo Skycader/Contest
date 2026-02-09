@@ -1,5 +1,5 @@
 /**
- *
+ * Ex25
  * Here are 3 tasks for Positive Lookahead and Positive Lookbehind
  * 1) From
  * RHX: $431.41
@@ -14,6 +14,7 @@
  * https://instagram.com => https
  * http://google.com => http
  * ftp://files.net => ftp
+ * Сложность: ★★★★★★★★☆☆ (8/10)
  */
 const r1 = //;
 const r2 = //

@@ -1,5 +1,7 @@
 /**
+ * Ex17
  * Trim &nbsp; (non-break space) in the given text.
+ * Сложность: ★★★★★☆☆☆☆☆ (5/10)
  */
 
 const r = //;

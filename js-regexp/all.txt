@@ -1,0 +1,2072 @@
+═══════════════════════════════════════════════════════════════
+Файл: ex1.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Ex 1
+ * Remove all words `cat`
+ */
+
+const r = ...;
+const f = (text) => {
+  /*code here */
+  return ...
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex1.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Ex 1
+ * Remove all words `cat`
+ */
+
+const r =
+  /cat/g; /*g means findMany and without means findOne*/
+const f = (text) => {
+  /*code here */
+  return text.replace(r, '');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex1.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex1.js');
+
+describe('Regexp', () => {
+  it('Test case for ex1', () => {
+    expect(f('There are no cat left. Cat is gone')).toBe(
+      'There are no  left.  is gone',
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex10.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find all lol words like lel lil lal and change them to l*l but don't change lol itself
+ */
+
+const r = /\bl[^o]l\b/gi;
+const f = (text) => {
+  return text.replace(r, "l*l");
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex10.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find all lol words like lel lil lal and change them to l*l but don't change lol itself
+ */
+
+const r = /l([a-n]|[p-z])l/gi;
+const f = (text) => {
+  return text.replace(r, 'l*l');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex10.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex10.js');
+
+describe('Regexp 10', () => {
+  it('Test case for ex10', () => {
+    expect(f('lol lal lil lel lol lul')).toBe(
+      'lol l*l l*l l*l lol l*l',
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex11.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are more than or equal to $100
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex11.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are more than $100
+ */
+
+/* 14 08 2024 */
+const f = (text) => {
+  const r = /(\w+):\s\$\d{3,}\.\d{2}/g;
+  return text.match(r)?.length || 0;
+};
+
+r = /\w+:\s\$\d{3,}\.\d+/g;
+const f = (text) => {
+  return text.match(r).length;
+};
+
+r = /\d+:\s\$[\d]{3,}\.\d+/g;
+const f = (text) => {
+  return text.match(r)?.length || 0;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex11.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex11.js');
+
+const text = `
+1: $1.00
+2: $2.00
+3: $3.00
+10: $25.15
+15: $36.19
+200: $550.16
+500: $680.92
+1001: $1000.00
+1500: $2000.20
+10001: $990.20
+`;
+
+const text2 = `
+1: $1.00
+2: $2.00
+3: $3.00
+`;
+describe('Regexp 11', () => {
+  it('Test case for ex11', () => {
+    expect(f(text)).toBe(5);
+  });
+  it('Test case for ex11 test2', () => {
+    expect(f(text2)).toBe(0);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex12.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are less than $100
+ */
+
+r = //;
+const f = (text) => {
+  return
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex12.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are less than $100
+ */
+
+r = /\d+:\s\$\d{0,2}\.\d+/g;
+const f = (text) => {
+  return text.match(r).length;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex12.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex12.js");
+
+const text = `
+1: $1.00
+2: $2.00
+3: $3.00
+8: $44.00
+9: $55.77
+10: $25.15
+15: $36.19
+200: $550.16
+500: $680.92
+1001: $1000.00
+1500: $2000.20
+10001: $990.20
+`;
+describe("Regexp 12", () => {
+  it("Test case for ex12", () => {
+    expect(f(text)).toBe(7);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex13.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are in between $100 and $9999
+ */
+
+r = //;
+const f = (text) => {
+  return
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex13.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given list of bills:
+ * 100: $120.10
+ * ...
+ * 90550: $550.25
+ *
+ * Count as many bills are in between $100 and $9999
+ */
+
+r = /\d+:\s\$\d{3,4}\.\d+/g;
+const f = (text) => {
+  return text.match(r).length;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex13.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex13.js");
+
+const text = `
+1: $1.00
+2: $2.00
+3: $3.00
+8: $44.00
+9: $55.77
+10: $25.15
+15: $36.19
+200: $550.16
+500: $680.92
+1001: $1000.00
+1500: $2000.20
+10001: $990.20
+`;
+describe("Regexp 13", () => {
+  it("Test case for ex13", () => {
+    expect(f(text)).toBe(5);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex14.js
+═══════════════════════════════════════════════════════════════
+
+/* Given text, such as
+ * Follow us on https://twitter.com/user/axl
+ * and https://instagram.com/user/axl
+ *
+ * Transform the instances of urls into
+ * <a href="https://twitter.com/user/axl">twitter</a>
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex14.solution.js
+═══════════════════════════════════════════════════════════════
+
+/* Given text, such as
+ * Follow us on https://twitter.com/123
+ * and https://instagram.com/user/123
+ *
+ * Transform the instances of urls into
+ * <a href="https://twitter.com/123">instagram</a>
+ */
+
+/** First time attempt yet successful WTF
+ * 31.05.2025
+ *
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com\/)([\w+\/]+)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
+ * Quick and simple loocking solution
+ * 16 march 2025 21:48 MSK
+ */
+
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)([\/\w*]*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
+ * A lot of struggle on 7th february 2025
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)([\w]+)(\.[\w]+)((\/[\w]+)*\w*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
+ * 20 january 2025
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)([\/\w*]*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
+ * January 06 2025
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)((\/\w*)*)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/**
+ * 13 November 2024 15:35
+ */
+const f = (text) => {
+  const r = /(https?:\/\/)(.*?)(\.com)(\/[\w+\/]+\w+)/g;
+  return text.replace(r, `<a href="$1$2$3$4">$2</a>`);
+};
+
+/** 02 september 2024
+ * YouTube is working fine and I'm using Memork for italian and japanese, memos is now fully cleared
+ */
+const r = /(https?:\/\/)(.*?)(\.com)((\/\w+)+)/g;
+
+const f = (text) => {
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/* 14 august 2024 11:24, today going for autodrom
+ * btw youtube is restored by me using spoof dpi and byedpi
+ * */
+const f = (text) => {
+  const r = /(https?:\/\/)(\w+)(\.com)((\/\w+)+)/g;
+  return text.replace(r, `<a href="$1$2$3$4">$2</a>`);
+};
+
+/* 05 august 2024 01:35
+ * Comment: youtube is being slowed... damn fuck */
+const f = (text) => {
+  const r = /(https:?\/\/)(.*?)(\.com)((\/\w+)+)/g;
+  return text.replace(r, '<a href="$1$2$3$4">$2</a>');
+};
+
+/** 22.05.2024 07:23 */
+const r = /(\w+)*\s(https:.*\.com[\/\w]+)/gi;
+const f = (text) => {
+  return text.replace(r, '<a href="$2">$1</a>');
+};
+
+const r = /(\w+)\s(https?:\/\/[\w\.\/.]+)/g;
+const f = (text) => {
+  return text.replace(r, '<a href="$2">$1</a>');
+};
+
+const r = /(\w+)\s(https?:\/\/\w+\.com[\/\w]+)/g;
+const f = (text) => {
+  return text.replace(r, '<a href="$2">$1</a>');
+};
+
+//03.11.2025 08:08
+//working my virus on
+const f = (text) => {
+  const r = /(https?:\/\/)(\w+)(\.\w+)([/\w+]*)/g;
+  return text.replace(r, `<a href="$1$2$3$4">$2</a>`);
+};
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex14.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex14.js");
+
+const text = `
+Follow us on https://instagram.com/user/axl, and also
+you may like to follow us on https://twitter.com/user/axl!
+`;
+
+const transformed_text = `
+Follow us on <a href="https://instagram.com/user/axl">instagram</a>, and also
+you may like to follow us on <a href="https://twitter.com/user/axl">twitter</a>!
+`;
+
+describe("Regexp 14", () => {
+  it("Test case for ex14", () => {
+    expect(f(text)).toBe(transformed_text);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex15.js
+═══════════════════════════════════════════════════════════════
+
+/* Check if the give text is a valid HTML document
+ *
+ * VALID:
+ * <html>
+ * ...
+ * </html>
+ *
+ * INVALID:
+ * <html>...</html><html>...</html>
+ * <htmx>...</htmx>
+ */
+
+const r = /^<html>[\w\n\s\p{P}]*<\/html>$/g; //<-- should not have m flag;
+const f = (text) => {
+  console.log(`${text} => ${r.test(text)}`);
+  return r.test(text.trim());
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex15.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex15.js");
+
+const valid1 = `
+<html>
+  Hello, world!
+</html>
+`;
+
+const invalid1 = `
+<html>
+Here goes html 1
+</html>
+<html>
+And also in the same file html 2
+</html>
+`;
+
+const invalid2 = `
+<htmx> Sounds cool? </htmx>
+`;
+
+const valid2 = `
+<html>
+<p>123</p>
+</html>
+`;
+
+const invalid3 = `
+<html>Is a lot of fun</html></html>
+`;
+
+describe("Regexp 15", () => {
+  it("Test case for ex15 #1", () => {
+    expect(f(valid1)).toBe(true);
+  });
+  it("Test case for ex15 #2", () => {
+    expect(f(valid2)).toBe(true);
+  });
+  it("Test case for ex15 #3", () => {
+    expect(f(invalid1)).toBe(false);
+  });
+  it("Test case for ex15 #4", () => {
+    expect(f(invalid2)).toBe(false);
+  });
+  it("Test case for ex15 #5", () => {
+    expect(f(invalid3)).toBe(false);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex16.js
+═══════════════════════════════════════════════════════════════
+
+/* Count all comments from the JS code
+ *
+ * Hint: including both single line and multi line comments.
+ *
+ */
+
+const r = //;
+
+const f = (text) => {
+  return;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex16.solution.js
+═══════════════════════════════════════════════════════════════
+
+/* Count all comments from the JS code
+ *
+ * Hint: including both single line and multi line comments.
+ *
+ */
+
+const r = /(^\/\*[\w\n\s\p{P}]*\*\/$|^\/\/.*$)/gm;
+
+const f = (text) => {
+  return text.match(r).length;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex16.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex16.js');
+
+const code = `
+/*
+Importing many
+many many things
+*/
+
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+ 
+/*
+Async function to bootstrap nestjs app
+*/
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+//Choosing port for app
+  await app.listen(3000);
+}
+
+//Bootstrapping app
+bootstrap();
+`;
+
+describe('Regexp 16', () => {
+  it('Test case for ex16', () => {
+    expect(f(code)).toBe(4);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex17.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Trim &nbsp; (non-break space) in the given text.
+ */
+
+const r = //;
+const f = (text) => {
+  return text.replace(r, "&nbsp;");
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex17.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Trim &nbsp; (non-break space) in the given text.
+ */
+
+const r = /(&nbsp;){2,}/g;
+const f = (text) => {
+  return text.replace(r, '&nbsp;');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex17.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex17.js');
+
+const code = `
+Hello, this&nbsp;is my text
+Now that&nbsp;&nbsp;know me well,
+we can&nbsp;continue.
+`;
+
+const done = `
+Hello, this&nbsp;is my text
+Now that&nbsp;know me well,
+we can&nbsp;continue.
+`;
+
+describe('Regexp 17', () => {
+  it('Test case for ex17', () => {
+    expect(f(code)).toBe(done);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex18.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Count SPECIAL* ip addresses in the given text.
+ * *SPECIAL IP ADDRESS LOOKS LIKE: 192.168.92.102...55.34.204
+ * THEY ARE PLACED IN A FORM OF LIST:
+ * 192.168.92.102
+ * 255.255.255.255
+ * ...
+ * 1.1.1.1
+ * IN SUMMARY, IT CAN BE ANY LENGTH FROM 4 UNITS TO INFINITY.
+ * TASK: COUNT THEM ALL.
+ *  */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex18.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Count SPECIAL* ip addresses in the given text.
+ * *SPECIAL IP ADDRESS LOOKS LIKE: 192.168.92.102...55.34.204
+ * IN SUMMARY, IT CAN BE ANY LENGTH FROM 4 UNITS TO INFINITY.
+ * TASK: FIND THEM ALL.
+ *  */
+
+/**
+ * 03 march 2025 quick solution
+ */
+const f = (text) => {
+  const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+  return text.match(r)?.length || 0;
+};
+
+/** 23 september 2024 10:26 took me 30 seconds ti write it down */
+const f = (text) => {
+  const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+  return text.match(r)?.length || 0;
+};
+
+const f = (text) => {
+  const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+  return text.match(r)?.length || 0;
+};
+
+const r = /^(\d{1,3}\.){3,}\d{1,3}$/gm;
+const f = (text) => {
+  return text.match(r)?.length || 0;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex18.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex18.js');
+
+const text = `
+192.168.92.102
+1.1.1.1
+0.0.0.0
+23.23.23.4.
+55.16.43.21.56
+92.132.46.312.63.46.1.23.5
+92.132.46.312.63.46.1.23.5.3456634
+92.132.46.312.63.46.1.23.5.345
+2.2.2
+90.10.20.50.10.23
+`;
+
+const text2 = `
+0.0.0
+1.1.1
+`;
+
+describe('it should find all ip addresses', () => {
+  it('should find all special ip addresses', () => {
+    expect(f(text)).toBe(7);
+  });
+  it('should return 0 if found none', () => {
+    expect(f(text2)).toBe(0);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex19.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Make sure the password consist of only ASCII symbols,
+ * which is A-Z a-z 0-9 all special symbols including $
+ *
+ * Input: password only
+ * Output: boolean
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex19.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Make sure the password consist of only ASCII symbols
+ */
+
+const f = (password) => {
+  const r = /^[A-Za-z0-9_$\-\p{P}]+$/g;
+  return r.test(password);
+};
+
+const f = (password) => {
+  const r = /^[A-Za-z0-9\p{P}$]+$/gu;
+  return r.test(password);
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex19.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require("./ex19.js");
+
+describe("test for ex19", () => {
+  it("should allow only correct ascii password", () => {
+    expect(f("asciipassword")).toBe(true);
+    expect(f("12345")).toBe(true);
+    expect(f("$Raxon123_")).toBe(true);
+  });
+
+  it("should allow only correct ascii password with some additional symbols", () => {
+    expect(f("ascii-password")).toBe(true);
+  });
+
+  it("should not allow non ascii password", () => {
+    expect(f("пароль")).toBe(false);
+    expect(f("очень!сложный!пароль!")).toBe(false);
+    expect(f("мудамуда!")).toBe(false);
+  });
+
+  it("should work correctly with wrong passwords", () => {
+    expect(f(" $Raxon123_")).toBe(false);
+    expect(f(" $Raxon123_ ")).toBe(false);
+    expect(f(" $Raxon 123_ ")).toBe(false);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex2.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Remove all Mr. and Mrs. from text.
+ */
+
+const r = //
+  const f = (text) => {
+  return
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex2.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Remove all Mr. and Mrs.
+ */
+
+const r =
+  /Mrs\./g; /*s? means that to find one s is optional*/
+const r2 = /(Mr|Mrs)\./g;
+const f = (text) => {
+  return text.replace(r, '');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex2.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex2.js');
+
+describe('Regexp', () => {
+  it('Test case for ex2', () => {
+    expect(f('Mr. and Mrs. Lucky')).toBe(' and  Lucky');
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex20.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Make all texts within h1,2,3...6 tags CAPITAL
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex20.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Make all texts within h1,2,3...6 tags CAPITAL
+ */
+
+const f = (text) => {
+  const r = /<(h[1-6])>(.*?)<\/\1>/g;
+  return text.replace(
+    r,
+    (match, m1, m2) => `<${m1}>${m2.toUpperCase()}</${m1}>`
+  );
+};
+
+/** Solution 31.05.2024 00:02 */
+
+const f = (text) => {
+  const r = /<(h[1-6])>(.*?)<\/\1>/g;
+  return text.replace(r, (matrch, $1, $2) => {
+    return `<${$1}>${$2.toUpperCase()}</${$1}>`;
+  });
+};
+
+/** A better solution using back reference
+ * 17 may 2024 12:38
+ * */
+const f3 = (text) => {
+  const r = /<h([1-6])>(.*?)<\/h\1>/g;
+  return text.replace(r, (match, $1, $2) => {
+    return "<h" + $1 + ">" + $2.toUpperCase() + "</h" + $1 + ">";
+  });
+};
+
+const f2 = (text) => {
+  const r = /(<h[1-6]>)(.*?)(<\/h[1-6]>)/gm;
+  return text.replace(r, function (match, $1, $2, $3) {
+    return $1 + $2.toUpperCase() + $3;
+  });
+};
+
+//22.10.2025
+const f = (text) => {
+  const r = /<(h[1-6])>(.*?)<\/(\1)>/g;
+  return text.replace(
+    r,
+    (match, r1, r2, r3) => `<${r1}>${r2.toUpperCase()}</${r3}>`
+  );
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex20.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require('./ex20.js');
+
+const test1 = `
+<h1>hello</h1>
+<h2>world</h2>
+`;
+
+const expect1 = `
+<h1>HELLO</h1>
+<h2>WORLD</h2>
+`;
+
+const test2 = '<h1>hello world!</h1>';
+const expect2 = '<h1>HELLO WORLD!</h1>';
+
+const test3 = '<h1>invalid html</h2>';
+const expect3 = '<h1>invalid html</h2>';
+
+const test4 = `
+<h1>valid html</h1>
+<h3>invalid html</h6>
+`;
+
+const expect4 = `
+<h1>VALID HTML</h1>
+<h3>invalid html</h6>
+`;
+
+describe('test 20', () => {
+  it('should work fine', () => {
+    expect(f(test1)).toBe(expect1);
+  });
+
+  it('should work fine #2', () => {
+    expect(f(test2)).toBe(expect2);
+  });
+
+  it('should omit invalid html', () => {
+    expect(f(test3)).toBe(expect3);
+  });
+
+  it('should render complex states', () => {
+    expect(f(test4)).toBe(expect4);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex21.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Count words that
+ * end with the same letter
+ * they start with
+ * I.e. aqua, astra, mom, text, roar, etc.
+ */
+
+const f = (text) => {};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex21.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Count words that
+ * end with the same letter
+ * they start with
+ * I.e. aqua, astra, mom, text, roar, etc.
+ */
+
+/** 08 08 2025 10:34 */
+const f = (text) => text.match(/\b(.)(.*?)\1\b/g)?.length || 0;
+
+const f = (text) => {
+  const r = /\b(\w)(\w*)\1\b/gm;
+  return text.match(r)?.length || 0;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex21.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require('./ex21.js');
+const text = `
+aqua astra mom text roar
+car level map
+`;
+
+const text2 = `
+dynomite bobr
+`;
+describe('test for ex21, testing backreference', () => {
+  it('should find and count all the required words', () => {
+    expect(f(text)).toBe(6);
+  });
+  it('should work fine with zero income', () => {
+    expect(f(text2)).toBe(0);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex22.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ *
+ * Replace all <b> tags
+ * to BTAG
+ *
+<b>Hello world</b>
+<b>Hello world and is wrong</b> <b>This</b>
+wow <b>world</b>
+===>
+BTAG
+BTAG BTAG
+wow BTAG
+ */
+
+const f = (text) => {};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex22.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ *
+ * Replace all texts within <b></b> tags
+ * to BTAG
+ */
+
+/** 16 MAY 2024 18:34 */
+const f = (text) => {
+  const r = /<b>[\w\W]*?<\/b>/g;
+  return text.replace(r, "BTAG");
+};
+
+const f = (text) => {
+  const r = /<b>.*?<\/b>/gm;
+  return text.replace(r, "BTAG");
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex22.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require("./ex22.js");
+const text = `
+<b>Hello world</b>
+<b>Hello world and is wrong</b> <b>This</b>
+wow <b>world</b>
+`;
+const expected = `
+BTAG
+BTAG BTAG
+wow BTAG
+`;
+
+describe("running test for ex22", () => {
+  it("should repalce all b tags with BTAG", () => {
+    expect(f(text)).toBe(expected);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex23.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find all words like lel lil lal but not lol itself
+ * Export r
+ * NOTE: use exclude marker for regexp
+ */
+
+const r = //;
+  (module.exports = r);
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex23.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find all lol words like lel lil lal and change them to l*l but don't change lol itself
+ * Export r
+ * NOTE: use exclude marker for regexp
+ */
+
+const r = /\bl[^o]l\b/gi;
+
+module.exports = r;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex23.test.js
+═══════════════════════════════════════════════════════════════
+
+r = require("./ex23.js");
+
+console.log(r);
+
+const f = (text) => {
+  return text.replace(r, "l*l");
+};
+describe("Regexp 10", () => {
+  it("Test case for ex10", () => {
+    expect(f("lol lal lil lel lol lul")).toBe("lol l*l l*l l*l lol l*l");
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex24.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Given any telephone number format,
+ * transform it into gigits only format.
+ * +7 987 231 45 23 => 79872314523
+ * +7 (987) 231 45-23 => 79872314523
+ * etc.
+ */
+
+/**
+ * Current rang:
+ * ◽️ Recruit (<0 days)
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex24.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require("./ex24.js");
+
+describe("Running test cases for ex24", () => {
+  it("should transform format 1 to digits only", () => {
+    expect(f("+7 923 168 59 41")).toBe("79231685941");
+  });
+
+  it("should transform format 2 to digits only", () => {
+    expect(f("+7 (923) 168 59-41")).toBe("79231685941");
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex25.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ *
+ * Here are 3 tasks for Positive Lookahead and Positive Lookbehind
+ * 1) From
+ * RHX: $431.41
+ * MTG: $651.22
+ * RTT: $300.00
+ * return regex that makes an array of prices, so is 431.41, 651.22 and 300.00
+ *
+ * 2) Extract title from html
+ * Given <title>Main title</title> return Main title
+ *
+ * 3) Given url, extract protocol
+ * https://instagram.com => https
+ * http://google.com => http
+ * ftp://files.net => ftp
+ */
+const r1 = //;
+const r2 = //
+const r3 = //;
+  module.exports = [r1, r2, r3];
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex25.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ *
+ * Here are 3 tasks for Positive Lookahead and Positive Lookbehind
+ * 1) From
+ * RHX: $431.41
+ * MTG: $651.22
+ * RTT: $300.00
+ * return regex that makes an array of prices, so is 431.41, 651.22 and 300.00
+ *
+ * 2) Extract title from html
+ * Given <title>Main title</title> return Main title
+ *
+ * 3) Given url, extract protocol
+ * https://instagram.com => https
+ * http://google.com => http
+ * ftp://files.net => ftp
+ */
+const r1 = /(?<=\$)[0-9.]+/g;
+const r2 = /(?<=<title>)(.*)(?=<\/title)/g;
+const r3 = /\b.+(?=:)/g;
+
+module.exports = [r1, r2, r3];
+
+/**
+ * Some other solutions
+ */
+
+//13.10.2025
+const xr1 = /(?<=\$)\d+\.\d+/g;
+const xr2 = /(?<=<title>)(?:.*)(?=<\/title>)/g;
+const xr3 = /(\w+)(?=:\/\/)/g;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex25.test.js
+═══════════════════════════════════════════════════════════════
+
+const [r1, r2, r3] = require("./ex25.js");
+
+const text1 = `
+AGX: $23.50
+TTX: $54.30
+ARG: $90.00
+`;
+
+const f1 = (text) => text.match(r1);
+
+const text2 = "<title>Website title</title>";
+const f2 = (text) => text.match(r2);
+
+const text3 = `
+  https://wikipedia.org
+  http://website.ru
+  ftp://aloga.top
+`;
+const f3 = (text) => text.match(r3);
+
+describe("Running test cases for ex25", () => {
+  it("test cast for task 1", () => {
+    expect(f1(text1)).toEqual(["23.50", "54.30", "90.00"]);
+  });
+
+  it("test case for task 2", () => {
+    expect(f2(text2)).toEqual(["Website title"]);
+  });
+
+  it("test case for task 3", () => {
+    expect(f3(text3)).toEqual(["https", "http", "ftp"]);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex26.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * In given text,  for example
+ * === I paid $30 for 30 apples and 80 oranges ===
+ * Find the quantifiers of products, such as 30 and 80
+ * And omit the prices
+ */
+
+module.exports = //;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex26.solution.js
+═══════════════════════════════════════════════════════════════
+
+module.exports = /\b(?<!\$)\d+\b/g;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex26.test.js
+═══════════════════════════════════════════════════════════════
+
+const r = require("./ex26.js");
+
+const text = "I paid $30 for 30 apples and 80 oranges";
+const f = (text) => text.match(r);
+
+describe("Running test cases for ex25", () => {
+  it("test cast for task 1", () => {
+    expect(f(text)).toEqual(["30", "80"]);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex27.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Write regex to test if there is
+ * 1) exactly 3 digits in a given string
+ * 2) less than 3 digits in a given string
+ * 3) 3 or more digits in a given string
+ */
+
+
+const r1 = //;
+const r2 = //;
+const r3 = //;
+module.exports = [r1, r2, r3];
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex27.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Write regex to test if there is
+ * 1) exactly 3 digits in a given string
+ * 2) less than 3 digits in a given string
+ * 3) 3 or more digits in a given string
+ */
+
+//Shorter sol 07.01.2026
+const r1 = /^(\D*\d\D*){3}$/;
+const r2 = /^(\D*\d\D*){1,2}$/;
+const r3 = /^(\D*\d\D*){3,}$/;
+
+const r1 = /^(?=(?:\D*\d){3}\D*$)/; //<-- \D* - without these will work: exactly123, however, not this e123xactly
+const r2 = /^(?=(?:\D*\d){1,2}\D*$)/;
+const r3 = /^(?=(?:\D*\d){3,}\D*$)/;
+module.exports = [r1, r2, r3];
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex27.test.js
+═══════════════════════════════════════════════════════════════
+
+const [r1, r2, r3] = require("./ex27.js");
+
+const f1 = (text) => r1.test(text);
+const f2 = (text) => r2.test(text);
+const f3 = (text) => r3.test(text);
+
+describe("Running test cases for ex25", () => {
+  it("...running test case #1", () => {
+    expect(f1("has_1_exact_2_ly_3_digits")).toBe(true);
+    expect(f1("1234")).toBe(false);
+    expect(f1("has_1_notex2act_2_ly_3_dig_4_its")).toBe(false);
+  });
+
+  it("...running test case #2", () => {
+    expect(f2("1234")).toBe(false);
+    expect(f2("12")).toBe(true);
+    expect(f2("has1_less_than_2_digits")).toBe(true);
+    expect(f2("has1_not_4_less_than_2_di_4gits")).toBe(false);
+  });
+
+  it("...running test case #3", () => {
+    expect(f3("h_1_as_mo_2_re_than_3_digits_4")).toBe(true);
+    expect(f3("has_1_exact_2_ly_3_digits")).toBe(true);
+    expect(f3("1452")).toBe(true);
+    expect(f3("12")).toBe(false);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex28.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Write regex, that checks if password is trong enough
+ * - has at least one upper case letter
+ * - has at least one lowercase letter
+ * - has at least 3 digits
+ * - has special character
+ * - has no whitespaces
+ * - has length from 24 to 256 symbols
+ */
+
+module.exports =
+  //;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex28.solution.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Write regex, that checks if password is trong enough
+ * - has at least one upper case letter
+ * - has at least one lowercase letter
+ * - has at least 3 digits
+ * - has special character
+ * - has no whitespaces
+ * - has length from 12 to 24 symbols
+ */
+
+//27.11.2025 00:43
+//(?=\S*[A-Z]\S*)(?=\S*[a-z]\S*)(?=\S*[0-9]\S*)(?=\S*[\p{P}\p{S}]\S*)[A-Z-a-z0-9\p{P}\p{S}]{24,256}
+
+module.exports =
+  /(?=(?:.*[A-Z]))(?=(?:.*[a-z]))(?=(?:.*[0-9]){3,})(?=(?:.*[\p{S}\p{P}]))(?!(?:.*\s)).{24,256}/gu;
+module.exports =
+  /^(?=.*[A-Z])(?=.*[a-z])(?=(?:.*\d){3,})(?=.*[\p{S}\p{P}])(?!.*\s)[A-Za-z0-9\p{S}\p{P}]{14,256}/u;
+module.exports =
+  /(?=\S*[A-Za-z0-9\p{S}\p{P}]\S*)(?=\S*[A-Z]\S*)(?=\S*[a-z]\S*)(?=\S*[0-9]\S*)(?=\S*[\p{S}\p{P}]\S*)(?!.*\s.*).{24,256}/u;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex28.test.js
+═══════════════════════════════════════════════════════════════
+
+const r = require("./ex28.js");
+
+const f = (text) => r.test(text);
+
+describe("Running test cases for ex25", () => {
+  it("...running test case #1", () => {
+    expect(f("$MySup3erHard0Pass0wor0d")).toBe(true);
+  });
+
+  it("...running test case #2", () => {
+    expect(f("MySuperHardPassword")).toBe(false);
+  });
+
+  it("...running test case #3", () => {
+    expect(f("$mysuperhardpassword")).toBe(false);
+  });
+
+  it("...running test case #4", () => {
+    expect(f("$$$MMMoney")).toBe(false);
+  });
+
+  it("...running test case #5", () => {
+    expect(f("$TooShort3000")).toBe(false);
+  });
+
+  it("...running test case #6", () => {
+    expect(f("$SpaceBarsAre Forbidden")).toBe(false);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex29.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Make a regex that finds all the correct dates in format DD/MM/YYYY
+ */
+
+const f = (text) => {
+  const r = //;
+  return ...;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex29.solution.js
+═══════════════════════════════════════════════════════════════
+
+const f = (text) => {
+  const r = /\b(0[1-9]|1\d|2\d|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}\b/g;
+  return text.match(r) || [];
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex29.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require("./ex29.js");
+
+describe(":: Test case EX29 — regex date extraction", () => {
+  it("should find valid dates in standard text", () => {
+    const text = `
+      Alan: 22/04/2001;
+      Max: 01/08/2005;
+      Rachel: 55/22/3333;
+    `;
+    const result = ["22/04/2001", "01/08/2005"];
+    expect(f(text)).toEqual(result);
+  });
+
+  it("should ignore clearly invalid day or month numbers", () => {
+    const text = `
+      00/01/2020;
+      32/12/1999;
+      15/13/2020;
+      12/00/2000;
+      10/10/2010;
+    `;
+    const result = ["10/10/2010"];
+    expect(f(text)).toEqual(result);
+  });
+
+  it("should find multiple dates in one line", () => {
+    const text = "Dates: 01/01/2000 02/02/2022 33/03/2022 12/12/2012";
+    const result = ["01/01/2000", "02/02/2022", "12/12/2012"];
+    expect(f(text)).toEqual(result);
+  });
+
+  it("should return an empty array if no dates match the pattern", () => {
+    const text = "No dates here: 2020/01/01, 1/1/2020, 99/99/9999.";
+    expect(f(text)).toEqual([]);
+  });
+
+  it("should handle messy spacing and punctuation", () => {
+    const text = `
+      John:03/03/2003, Mary - 09/09/1999; Tim=30/11/2010!
+    `;
+    const result = ["03/03/2003", "09/09/1999", "30/11/2010"];
+    expect(f(text)).toEqual(result);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex3.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Replace all possible Google,Goooogle,goooooooooooogle with Yandex
+ */
+
+const r = //;
+const f = (text) => {
+  return;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex3.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Replace all possible Google,Goooogle,goooooooooooogle with Yandex
+ */
+
+const r = /Gooo*gle/gi;
+const f = (text) => {
+  return text.replace(r, 'Yandex');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex3.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex3.js");
+
+describe("Regexp", () => {
+  it("Test case for ex3", () => {
+    expect(f("Google Gooooooogle Gogle goooooooooooogle Yandex Googl")).toBe(
+      "Yandex Yandex Gogle Yandex Yandex Googl",
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex30.js
+═══════════════════════════════════════════════════════════════
+
+/**
+ * Among the given text,
+ * find all the strings that could be good passwords,
+ * that must have capital and lower case, one digit and one of !@#$%^&*
+ * Minimal length is 8 symbols
+ * Password must NOT have spaces
+ * Find all of them
+ */
+
+const f = (text) => {
+  const r =
+    //;
+  return;
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex30.solution.js
+═══════════════════════════════════════════════════════════════
+
+const f = (text) => {
+  const r =
+    /(?=\S*[A-Za-z0-9!@#$%^&*]{8,}\S*)(?=\S*[A-Z]\S*)(?=\S*[a-z]\S*)(?=\S*[0-9]\S*)(?=\S*[!@#$%^&*]\S*)[A-Za-z0-9!@#$%^&*]+/g;
+  // /(?=\S*[A-Za-z0-9!@#$%^&*]\S*)(?=\S*[A-Z]\S*)(?=\S*[a-z]\S*)(?=\S*[0-9]\S*)(?=\S*[!@#$%^&*]\S*)[A-Za-z0-9!@#$%^&*]{8,}/g
+  return text.match(r) || [];
+};
+
+const f = (text) => {
+  const r =
+    /(?=\S*[A-Z]\S*)(?=\S*[a-z]\S*)(?=\S*[0-9]\S*)(?=\S*[!@#$%^&*]\S*)[A-Za-z0-9!@#$%^&*]{8,}/g;
+  return text.match(r) || [];
+};
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex30.test.js
+═══════════════════════════════════════════════════════════════
+
+const f = require("./ex30.js");
+
+describe(":: Running test case for EX30", () => {
+  it("1️⃣ should find all the correct passwords in the text", () => {
+    const text =
+      "My passwords: pass123, Strong#Pass123, weak, StrongPass123#, P@ssw0rd!, HelloWorld, 12345678!, aB3#4567, passWORD123#, #Qwerty123, Small#1, SHORT#1a";
+
+    const result = f(text);
+
+    expect(result).toEqual([
+      "Strong#Pass123",
+      "StrongPass123#",
+      "P@ssw0rd!",
+      "aB3#4567",
+      "passWORD123#",
+      "#Qwerty123",
+      "SHORT#1a",
+    ]);
+  });
+
+  it("2️⃣ should not match words that lack a required character type", () => {
+    const invalids = [
+      "passwords", // нет цифры и спецсимвола
+      "pass123", // нет заглавной буквы и спецсимвола
+      "StrongPass", // нет цифры и спецсимвола
+      "12345678", // нет букв
+      "!!!!!!!!", // нет букв и цифр
+      "Abcdefgh", // нет цифры и спецсимвола
+      "Abcdefg1", // нет спецсимвола
+    ];
+
+    for (const word of invalids) {
+      const res = f(word);
+      expect(res).toEqual([]);
+    }
+  });
+
+  it("3️⃣ should correctly handle multiple valid passwords in one line", () => {
+    const text = "Try these: XyZ#1234 Abc#1234 Strong#Pass123";
+    const result = f(text);
+    expect(result).toEqual(["XyZ#1234", "Abc#1234", "Strong#Pass123"]);
+  });
+
+  it("4️⃣ should handle punctuation and boundaries correctly", () => {
+    const text = "Password: P@ssw0rd!; another one is Pass#1234.";
+    const result = f(text);
+    expect(result).toEqual(["P@ssw0rd!", "Pass#1234"]);
+  });
+
+  it("5️⃣ should not cross spaces or punctuation boundaries", () => {
+    const text = "Invalid combos: P@ss w0rd!, Pass#12 34, Stron gPass1";
+    const result = f(text);
+    expect(result).toEqual([]); // ни одно невалидное не должно совпасть
+  });
+
+  it("6️⃣ should return an empty array when no matches found", () => {
+    const text = "noValidPasswordsHere!";
+    const result = f(text);
+    expect(result).toEqual([]);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex4.js
+═══════════════════════════════════════════════════════════════
+
+/*
+  * Find all lol lal lil and so on with dots and replace the mid letter with *
+  * lel. lol lil. => l*l. lol l*l.
+*/
+
+const r = //
+const f = (text) => {
+  return;
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex4.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * lel. lol lil. => l*l. lol l*l.
+ */
+
+const r = /l.l\./g;
+const r2 = /l(o|i)l\./g;
+const f = (text) => {
+  return text.replace(r, 'l*l.');
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex4.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex4.js');
+
+describe('Regexp', () => {
+  it('Test case for ex4', () => {
+    expect(f('lil. lol lel.')).toBe(
+      'l*l. lol l*l.',
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex5.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find people who own rat or cat and their name is just 4 letters length
+ * -> Jane's cat and Mike's rat and Naomi's dog and Alex's cat and John's dog => Jane Mike Alex (3)
+ */
+
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex5.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Find people who own rat or cat and their name is just 4 letters length
+ * -> Jane's cat and Mike's rat and Naomi's dog and -> Alex's cat and John's dog => Jane Mike Alex (3)
+ */
+const r = /\w{4,4}'s\s[cr]at/gi;
+const r2 = /.{4,4}'s .at/g;
+
+const f = (text) => {
+  return text.match(r).length;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex5.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex5.js');
+
+describe('Regexp', () => {
+  it('Test case for ex5', () => {
+    expect(f(`Jane's cat and Mike's rat and Naomi's dog and Alex's cat and John's dog`)).toBe(
+      3,
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex6.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * remove digits 0-5 and capitals from a string
+*/
+
+const r = //
+const f = text => {
+  return;
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex6.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * remove digits 0-5 and capitals fro ma string
+*/
+
+const r = /([A-Z]|[0-5])/g
+const f = text => {
+  return text.replace(r, '')
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex6.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex6.js');
+
+describe('Regexp', () => {
+  it('Test case for ex6', () => {
+    expect(f(`THEstring1234567890`)).toBe(
+      'string6789',
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex7.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Replace all the and The with a 
+*/
+
+const r = //
+const f = text => {
+  return;
+}
+
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex7.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Replace all the and The with a 
+*/
+
+const r = /(t|T)he/g
+const f = text => {
+  return text.replace(r, 'a')
+}
+
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex7.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex7.js');
+
+describe('Regexp', () => {
+  it('Test case for ex7', () => {
+    expect(f(`The cat and the dog and a rat`)).toBe(
+      'a cat and a dog and a rat',
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex8.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Check if a message is valid: it should contain xo 2 or 3 times (xoxo or xoxoxo)
+*/
+
+const r = //
+const f = (text) => {
+  return;
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex8.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Check if a message is valid: it should contain xo 2 or 3 times (xoxo or xoxoxo)
+*/
+
+const r = /(^|\s)(xo){2,3}(\s|$)/
+const f = (text) => {
+  return Boolean(text.match(r));
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex8.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require('./ex8.js');
+
+describe('Regexp', () => {
+  it('Test case for ex8 #1', () => {
+    expect(f(`I love you xoxo`)).toBe(
+      true,
+    );
+  });
+
+  it('Test case for ex8 #2', () => {
+    expect(f(`I love you xoxoxo`)).toBe(
+      true,
+    );
+  });
+
+  it('Test case for ex8 #3', () => {
+    expect(f(`I love you xo`)).toBe(
+      false,
+    );
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex9.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Count how many lines start with The
+ */
+
+const r = //;
+const f = (text) => {
+  return;
+};
+module.exports = f;
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex9.solution.js
+═══════════════════════════════════════════════════════════════
+
+/*
+ * Count how many lines start with The
+*/
+
+const r = /^The/gmi
+const f = (text) => {
+  return text.match(r).length
+}
+module.exports = f
+
+
+═══════════════════════════════════════════════════════════════
+Файл: ex9.test.js
+═══════════════════════════════════════════════════════════════
+
+f = require("./ex9.js");
+
+describe("Regexp", () => {
+  it("Test case for ex9", () => {
+    expect(
+      f(
+        `The most imprtant part\nIs to be yourself\nA true hero doesn't wear a cape\nThe world needs us\nYou may know the The article`,
+      ),
+    ).toBe(2);
+  });
+});
+
+
+═══════════════════════════════════════════════════════════════
+Файл: random
+═══════════════════════════════════════════════════════════════
+
+
+#!/bin/bash
+
+# Находим все файлы по маске
+files=(ex[0-9]{1,}.js)
+
+# Проверяем, есть ли файлы, соответствующие маске
+if [ ${#files[@]} -eq 0 ]; then
+    echo "Нет файлов, соответствующих маске ex*.js"
+    exit 1
+fi
+
+# Генерируем случайный индекс для выбора файла
+random_index=$(($RANDOM % ${#files[@]}))
+
+# Получаем случайный файл
+random_file=${files[$random_index]}
+
+# Открываем файл (например, в текстовом редакторе nano)
+nvim "$random_file"
+
+
+═══════════════════════════════════════════════════════════════
+Файл: write.sh
+═══════════════════════════════════════════════════════════════
+
+#!/usr/bin/env bash
+
+# Очищаем файл, если он уже существует
+> all.txt
+
+# Проходим по всем файлам в текущей директории
+for file in *; do
+    # Пропускаем, если это не обычный файл или это наш же all.txt
+    [[ -f "$file" ]] || continue
+    [[ "$file" == "all.txt" ]] && continue
+
+    # Выводим разделитель + имя файла
+    {
+        echo "═══════════════════════════════════════════════════════════════"
+        echo "Файл: $file"
+        echo "═══════════════════════════════════════════════════════════════"
+        echo ""
+
+        # Выводим содержимое файла
+        cat "$file"
+
+        # Пустая строка после содержимого для читаемости
+        echo ""
+        echo ""
+
+    } >> all.txt
+done
+
+echo "Готово. Результат записан в all.txt"
+

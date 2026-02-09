@@ -1,6 +1,7 @@
 /*
  * Ex 1
  * Remove all words `cat`
+ * ★Сложность: ★☆☆☆☆☆☆☆☆ (2/10)
  */
 
 const r = ...;

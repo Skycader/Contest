@@ -1,7 +1,8 @@
-/* Count all comments from the JS code
+/* Ex16
+ * Count all comments from the JS code
  *
  * Hint: including both single line and multi line comments.
- *
+ * Сложность: ★★★★★★★☆☆☆ (7/10)
  */
 
 const r = //;
