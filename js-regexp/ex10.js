@@ -4,8 +4,8 @@
  * Сложность: ★★★★★★☆☆☆☆ (6/10)
  */
 
-const r = /\bl[^o]l\b/gi;
+const r = //
 const f = (text) => {
-  return text.replace(r, "l*l");
+  return 
 };
 module.exports = f;
