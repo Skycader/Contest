@@ -5,7 +5,8 @@
  * ...
  * 90550: $550.25
  *
- * Count as many bills are more than or equal to $100
+ * Count as many bills are more than or equal to $100,
+ * NOTICE: there could be leading zeroes!
  * Сложность: ★★★★★★☆☆☆☆ (6/10)
  */
 
