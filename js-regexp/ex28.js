@@ -10,5 +10,4 @@
  * Сложность: ★★★★★★★★★☆ (9/10)
  */
 
-module.exports =
-  //;
+module.exports = //;

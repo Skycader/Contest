@@ -26,4 +26,23 @@ describe("Running test cases for ex25", () => {
   it("...running test case #6", () => {
     expect(f("$SpaceBarsAre Forbidden")).toBe(false);
   });
+
+  it("...running test case #7 (Only 1 digit - should be false)", () => {
+    expect(f("$MySup3erHardPassworDDDD")).toBe(false);
+  });
+
+  it("...running test case #8 (Stealth Space at the start - should be false)", () => {
+    // Если нет якоря ^, ракета зацепится за середину и пропустит пробел в начале
+    expect(f(" $MySup3erHard0Pass0wor0d")).toBe(false);
+  });
+
+  it("...running test case #9 (Stealth Space at the end - should be false)", () => {
+    // Без якоря $ ракета скажет true, найдя совпадение до пробела
+    expect(f("$MySup3erHard0Pass0wor0d ")).toBe(false);
+  });
+
+  it("...running test case #10 (Internal whitespace - should be false)", () => {
+    // Проверка, что ракета не игнорирует пробел внутри длинной строки
+    expect(f("$MySup3erHard0Pass 0wor0d")).toBe(false);
+  });
 });
