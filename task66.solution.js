@@ -8,6 +8,24 @@
  * }
  */
 
+/** cloude suggestion 17.07.2026 */
+const f = (obj) =>
+  Object.entries(obj).flatMap(([key, msgs]) => msgs.map((m) => `${key} ${m}`));
+
+/** 16.07.2026 */
+const f = (obj) => {
+  const keys = Object.keys(obj);
+  const result = [];
+
+  for (let key of keys) {
+    for (let prop of obj[key]) {
+      result.push(`${key} ${prop}`);
+    }
+  }
+
+  return result;
+};
+
 /** a bit simpler solution */
 const f = (error) => {
   let errors = [];
